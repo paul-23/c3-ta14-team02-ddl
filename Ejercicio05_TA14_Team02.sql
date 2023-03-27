@@ -1,0 +1,15 @@
+CREATE DATABASE ejercicio5;
+USE ejercicio5;
+
+CREATE TABLE Almacenes(
+Codigo INT AUTO_INCREMENT PRIMARY KEY,
+Lugar NVARCHAR(100),
+Capacidad INT);
+ 
+CREATE TABLE Cajas(
+NumReferencia CHAR(5) PRIMARY KEY,
+Contenido NVARCHAR(100),
+Valor INT,
+Almacen INT,
+FOREIGN KEY (Almacen) REFERENCES Almacenes(Codigo)
+ON DELETE CASCADE ON UPDATE CASCADE);
