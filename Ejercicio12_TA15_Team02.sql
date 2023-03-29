@@ -20,7 +20,7 @@ CREATE TABLE curso (
 	fecha_inicio DATE,
 	fecha_fin DATE,
 	num_horas INT NOT NULL,
-	FOREIGN KEY (dni_profesor) REFERENCES profesores (dni),
+	FOREIGN KEY (dni_profesor) REFERENCES profesores (dni)  ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT comprobar_fechas CHECK (fecha_inicio < fecha_fin)
 );
 
